@@ -22,127 +22,38 @@
     <title>News homepage</title>
   </head>
   <body>
-    <div class="container">
-      <header>
+    <div class="body__2"></div> <!-- for javascript -->
+    <header>
+      <div class="container">
         <div class="logo__component">
-          <img src="./assets/images/logo.svg" alt="website logo" class="logo" />
+          <img src="./assets/images/logo.svg" alt="" />
         </div>
 
-        <div class="menu__icon__component">
-          <img
-            src="./assets/images/icon-menu.svg"
-            alt="menu icon"
-            class="menu__icon"
-          />
+        <div class="hamburger__menu">
+          <img src="./assets/images/icon-menu.svg" alt="" id="hamburger__menu"/>
         </div>
 
         <nav>
-          <div class="close__menu__component">
-            <img
-              src="./assets/images/icon-menu-close.svg"
-              alt="close button"
-              class="close__menu"
-            />
+          <div class="close__menu">
+            <img src="./assets/images/icon-menu-close.svg" alt="" id="close__menu"/>
           </div>
 
-          <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">new</a></li>
-            <li><a href="#">popular</a></li>
-            <li><a href="#">trending</a></li>
-            <li><a href="#">categories</a></li>
+          <ul class="nav__links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Trending</a></li>
+            <li><a href="#">Categories</a></li>
           </ul>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      <main>
-        <section>
-          <div class="featured__image">
-            <img src="./assets/images/image-web-3-mobile.jpg" alt="" class="" />
-          </div>
-          <div class="head__line">
-            <h1>The Bright Future of Web 3.0?</h1>
+    <main>
+      <div class="container">
 
-            <div class="paragraph__button">
-              <p>
-                We dive into the next evolution of the web that claims to put
-                the power of the platforms back into the hands of the people.
-                But is it really fulfilling its promise?
-              </p>
-
-              <a href="#">read more</a>
-            </div>
-          </div>
-        </section>
-
-        <aside>
-          <div class="aside__title">
-            <h2>new</h2>
-          </div>
-
-          <article>
-            <h2>Hydrogen VS Electric Cars</h2>
-            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-          </article>
-          <article>
-            <h2>The Downsides of AI Artistry</h2>
-            <p>
-              What are the possible adverse effects of on-demand AI image
-              generation?
-            </p>
-          </article>
-          <article>
-            <h2>Is VC Funding Drying Up?</h2>
-            <p>
-              Private funding by VC firms is down 50% YOY. We take a look at
-              what that means.
-            </p>
-          </article>
-        </aside>
-      </main>
-
-      <footer>
-        <article>
-          <div class="featured__image">
-            <img src="./assets/images/image-retro-pcs.jpg" alt="" />
-          </div>
-          <div class="article__content">
-            <p class="number">01</p>
-            <h2>Reviving Retro PCs</h2>
-            <p class="paragraph">
-              What happens when old PCs are given modern upgrades?
-            </p>
-          </div>
-        </article>
-
-        <article>
-          <div class="featured__image">
-            <img src="./assets/images/image-top-laptops.jpg" alt="" />
-          </div>
-          <div class="article__content">
-            <p class="number">02</p>
-            <h2>Top 10 Laptops of 2022</h2>
-            <p class="paragraph">
-              Our best picks for various needs and budgets.
-            </p>
-          </div>
-        </article>
-
-        <article>
-          <div class="featured__image">
-            <img src="./assets/images/image-gaming-growth.jpg" alt="" />
-          </div>
-          
-          <div class="article__content">
-            <p class="number">03</p>
-            <h2>The Growth of Gaming</h2>
-            <p class="paragraph">
-              How the pandemic has sparked fresh opportunities.
-            </p>
-          </div>
-        </article>
-      </footer>
-    </div>
+      </div>
+    </main>
 
     <script src="./app.js"></script>
   </body>

@@ -1,22 +1,27 @@
-const hamburgerMenu = document.querySelector('.menu__icon')
+const hamburgerMenu = document.querySelector('.hamburger__menu');
 const mobileNav = document.querySelector('nav');
 const closeMenu = document.querySelector('.close__menu');
-const menu = document.querySelectorAll('li');
-
+const body = document.querySelector('.body__2');
+const menuItems = document.querySelectorAll('li');
 
 hamburgerMenu.addEventListener("click", () => {
     mobileNav.classList.toggle('active')
-    document.querySelector('body').classList.toggle('nav-open')
+    body.classList.toggle('active')
 })
-
+ 
 closeMenu.addEventListener("click", () => {
     mobileNav.classList.remove('active')
-    document.querySelector('body').classList.remove('nav-open')
+    body.classList.remove('active')
+})
+  
+menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+        mobileNav.classList.remove('active')
+        body.classList.remove('active')
+    })
 })
 
-menu.forEach(menu => {
-    menu.addEventListener("click", () => {
-        mobileNav.classList.remove('active')
-        document.querySelector('body').classList.remove('nav-open')
-    })
+body.addEventListener("click", () => {
+    mobileNav.classList.remove('active')
+    body.classList.remove('active')
 })
