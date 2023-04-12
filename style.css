@@ -11,7 +11,7 @@ html {
 /*  */
 .container {
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   /* border: 1px solid black;  */
   font-family: "Inter", sans-serif;
@@ -47,6 +47,7 @@ nav li {
 li a {
   text-decoration: none;
   color: hsl(240, 100%, 5%);
+  transition: ease .3s;
 }
 
 li a:hover {
@@ -105,8 +106,9 @@ nav.active {
 /* main */
 
 main {
-  position: absolute;
-  top: 13%;
+  position: relative;
+  padding: 6rem 0 0;
+  margin-bottom: 2rem;
 }
 
 .featured__image img {
@@ -135,6 +137,7 @@ main .paragraph {
   display: grid;
   gap: 1.2rem; /*  */
 }
+
 main .paragraph p {
   color: hsl(240, 100%, 5%);
   line-height: 1.7;
@@ -151,6 +154,11 @@ main .paragraph a {
   width: 150px;
   text-align: center;
   font-size: 0.8rem;
+  transition: ease .3s
+}
+
+main .paragraph a:hover {
+  background-color: hsl(240, 100%, 5%);
 }
 
 aside {
@@ -178,6 +186,7 @@ aside h3 {
   color: hsl(36, 100%, 99%);
   margin-bottom: 1rem;
   cursor: pointer;
+  transition: ease .3s;
 }
 
 aside h3:hover {
@@ -186,6 +195,54 @@ aside h3:hover {
 
 aside p {
   color: hsl(233, 8%, 79%);
+  line-height: 1.6;
+}
+
+footer {
+  margin-bottom: 7rem;
+}
+
+footer .container {
+  display: grid;
+  gap: 1.5rem
+}
+
+footer article {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+footer img {
+  width: 40%;
+  object-fit: cover;
+}
+
+footer .text__content {
+  display: grid;
+  align-items: flex-start;
+}
+footer h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(233, 8%, 79%);
+}
+
+footer h3 {
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+  font-size: 1rem;
+  transition: ease .3s;
+  cursor: pointer;
+}
+
+footer h3:hover {
+  color: hsl(35, 77%, 62%);
+}
+
+footer p {
+  color: hsl(236, 13%, 42%);
   line-height: 1.6;
 }
 
@@ -246,7 +303,8 @@ aside p {
 
   main {
     position: initial;
-    top: inherit;
+    top: initial;
+    padding: 0;
   }
 
   main .container > article {
@@ -275,6 +333,11 @@ aside p {
     grid-column: 3;
     grid-row: span 2;
   }
+
+
+  footer article {
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -293,7 +356,7 @@ aside p {
   main .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .featured__image {
@@ -321,5 +384,17 @@ aside p {
 
   aside p {
     font-size: 0.8rem;
+  }
+
+  footer {
+    margin-top: 5rem;
+  }
+
+  footer .container {
+    display: flex;
+  }
+
+  footer article {
+    width: 100%;
   }
 }
