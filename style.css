@@ -11,18 +11,25 @@ html {
 /*  */
 .container {
   width: 90%;
-  max-width: 1440px;
+  max-width: 900px;
   margin: 0 auto;
   /* border: 1px solid black;  */
   font-family: "Inter", sans-serif;
 }
 /*  */
 
+header {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.986);
+  z-index: 1;
+}
+
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 0 0;
 }
 
 .hamburger__menu {
@@ -54,9 +61,9 @@ nav {
   right: -100%;
   width: 70%;
   height: 100%;
-  transition: ease .5s;
+  transition: ease 0.5s;
   background-color: #fff;
-  padding: 2rem 5%;
+  padding: 2.5rem 5%;
 }
 
 nav .close__menu {
@@ -68,39 +75,129 @@ nav .nav__links {
   margin-top: 10rem;
 }
 
-.nav__links li{
+.nav__links li {
   margin-bottom: 2rem;
 }
 
 li a {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 /*** mobile menu - active */
 
 nav.active {
-  right: 0
+  right: 0;
 }
 
 /* close mobile menu */
-.body__2 {
-  transition: ease .5s;
-}
 
 .body__2.active {
   position: absolute;
   content: "";
   top: 0;
   left: 0;
-  width: 30%;
-  height: 100%;
+  width: 80%;
+  height: 1000%;
   background-color: rgba(0, 0, 0, 0.304);
+  z-index: 1;
 }
 
+/* main */
+
+main {
+  position: absolute;
+  top: 13%;
+}
+
+.featured__image img {
+  width: 100%;
+  display: block;
+}
+
+.featured__image img:nth-child(2) {
+  display: none;
+}
+
+main .container > article {
+  margin: 1rem auto 3rem; /*  */
+  display: grid;
+  gap: 1rem;
+}
+
+main article h1 {
+  font-size: 2.3rem;
+  color: hsl(240, 100%, 5%);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+main .paragraph {
+  display: grid;
+  gap: 1.2rem; /*  */
+}
+main .paragraph p {
+  color: hsl(240, 100%, 5%);
+  line-height: 1.7;
+}
+
+main .paragraph a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: hsl(5, 85%, 63%);
+  padding: 0.7rem 1rem;
+  letter-spacing: 2px;
+  display: block;
+  width: 150px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+aside {
+  background-color: hsl(240, 100%, 5%);
+  padding: 1rem;
+  color: white;
+}
+
+aside h2 {
+  color: hsl(35, 77%, 62%);
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+aside > article {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+}
+
+aside > article:nth-child(4) {
+  border-bottom: none;
+}
+
+aside h3 {
+  color: hsl(36, 100%, 99%);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+aside h3:hover {
+  color: hsl(35, 77%, 62%);
+}
+
+aside p {
+  color: hsl(233, 8%, 79%);
+  line-height: 1.6;
+}
 
 /* desktop view */
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 481px) {
+  header {
+    position: initial;
+    z-index: initial;
+    margin-bottom: 2rem;
+  }
+
   header .hamburger__menu {
     display: none;
   }
@@ -116,7 +213,7 @@ nav.active {
   nav .nav__links {
     display: flex;
     margin-top: initial;
-    gap: 50px;
+    gap: 10px;
   }
 
   .nav__links li {
@@ -124,10 +221,105 @@ nav.active {
   }
 
   li a {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   nav .close__menu {
     display: none;
+  }
+
+  /* main */
+
+  .featured__image img:nth-child(1) {
+    display: none;
+  }
+
+  .featured__image img:nth-child(2) {
+    display: block;
+  }
+
+  .featured__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main {
+    position: initial;
+    top: inherit;
+  }
+
+  main .container > article {
+    display: flex;
+    gap: 0;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  main article h1 {
+    width: 42%;
+  }
+
+  main .paragraph {
+    width: 57%;
+  }
+
+  main .paragraph p {
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+
+  /* *** aside *** */
+  aside {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header .container {
+    padding: 4rem 0 1rem;
+  }
+
+  nav .nav__links {
+    gap: 20px;
+  }
+
+  li a {
+    font-size: 1rem;
+  }
+
+  main .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .featured__image {
+    grid-column: span 2;
+    overflow: hidden;
+  }
+
+  main .container > article {
+    grid-row: 2;
+    grid-column: span 2;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  main article h1 {
+    font-size: 2.5rem;
+  }
+  aside {
+    width: 100%;
+  }
+
+  aside h3 {
+    font-size: 1rem;
+  }
+
+  aside p {
+    font-size: 0.8rem;
   }
 }
